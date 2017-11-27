@@ -64,7 +64,21 @@
             .item 
                 max-height: inherit
                 padding-top: 0
-                height: inherit 
+                height: inherit
+                &::after 
+                    background-color: red
+                    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, $azul 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,$azul 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,$azul 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='$azul',GradientType=0 ); /* IE6-9 */
+                    content: ""
+                    display: block 
+                    height: 100%
+                    left: 0 
+                    position: absolute
+                    top: 0 
+                    width: 100%
+                    z-index: 1 
                 .container
                     align-items: center
                     display: flex 
@@ -72,8 +86,9 @@
                     flex-wrap: wrap
                     height: 100% 
                     justify-content: flex-end
-                .btn 
-                    font-size: 2rem
+                    z-index: 10
+                    .btn 
+                        font-size: 2rem
 @media only screen and (max-height: 480px)
     .webdoor 
         .owl-carousel
