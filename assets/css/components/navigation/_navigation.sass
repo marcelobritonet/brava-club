@@ -1,0 +1,37 @@
+.navigation
+    align-items: center
+    @extend .flex
+    flex-flow: row   
+    &.-menu
+        >ul  
+            width: 100%
+            >li  
+                &:nth-last-child(2)
+                    margin-right: 0
+                &:last-child 
+                    display: none 
+                >a  
+                    &::after 
+                        background-color: $amarelo
+                        bottom: -4px
+                        content: ""
+                        display: block
+                        height: 2px 
+                        position: absolute 
+                        +width(1000ms)
+                        width: 0%
+                    &:hover::after 
+                        width: 100%
+                    position: relative 
+    >* 
+        @extend .navigation
+        &:not(:last-child)
+            margin-right: 20px
+        color: white 
+        text-align: center
+        text-transform: uppercase
+        >*
+            color: inherit
+            font-size: 1.3rem
+            text-align: inherit
+            text-transform: inherit

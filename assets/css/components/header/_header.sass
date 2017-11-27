@@ -1,0 +1,59 @@
+.header 
+    background-color: transparentize($azul,0.1)
+    i ''
+        display: inline-block
+        margin-right: 5px
+        vertical-align: middle
+    .btn
+        display: inline-block
+        vertical-align: middle
+        &.-btn-1
+            font-size: 1rem        
+            padding: 5px 10px 
+    >.container     
+        @extend .navigation
+        justify-content: space-between
+        padding-top: 15px
+        padding-bottom: 15px
+        >div 
+            @extend .navigation
+    position: relative
+    z-index: 10
+@media only screen and (min-width: 768px) and (max-width: 1140px)
+    .header
+        >.container 
+            flex-flow: column 
+            >*
+                &:not(:last-child)
+                    margin-right: 0
+                flex: 0 0 auto 
+                width: 100% 
+            >div  
+                margin-bottom: 15px
+                >.registration
+                    margin-left: auto
+            >.navigation
+                &.-menu
+                    background-color: transparentize($azul,0.1)
+                    margin-bottom: -15px
+                    padding: 15px
+                    width: calc(100% + 30px)
+                >ul  
+                    justify-content: flex-end
+@media only screen and (max-width: 768px)
+    .header
+        >.container
+            >*
+                &.navigation 
+                    &.-menu
+                        >*  
+                            >*
+                                &:not(:last-child)
+                                    display: none
+                                &:last-child 
+                                    display: inline-block
+@media only screen and (max-width: 500px)
+    .header
+        >.container
+            .registration
+                display: none

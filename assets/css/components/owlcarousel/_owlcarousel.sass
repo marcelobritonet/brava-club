@@ -1,0 +1,81 @@
+.webdoor
+    .owl-carousel
+        &.owl-theme
+            .owl-dots
+                align-items: stretch 
+                bottom: 0
+                display: flex 
+                justify-content: center 
+                margin: 0
+                position: absolute
+                padding: 15px
+                width: 100%
+                .owl-dot 
+                    >span  
+                        +border(0px)
+                        background: white
+                        height: 5px
+                        margin: 0
+                        width: 100%
+                    &.active>span 
+                        background: $amarelo
+                    flex: 1
+                    margin: 0 7px
+                    max-width: 65px
+        .item
+            background-size: cover 
+            background-position: center center
+            background-repeat: no-repeat
+            max-height: 580px
+            padding: calc(23% + 79px) 15px 150px
+            .btn 
+                font-size: 2.4rem
+                max-width: 300px
+                margin: 0 auto
+                padding: 15px
+@media only screen and (min-width: 1600px)  
+    .webdoor
+        .owl-carousel
+            .item 
+                padding: calc(300px + 79px) 15px 150px
+@media only screen and (min-width: 1140px) and (max-width: 1600px)
+    .webdoor
+        .owl-carousel
+            .item 
+                padding: 23% 15px 150px
+@media only screen and (min-width: 768px) and (max-width: 1140px)
+    .webdoor
+        .owl-carousel
+            .item 
+                padding: calc(23% + 125px) 15px 150px
+@media only screen and (max-width: 768px)
+    .webdoor
+        max-height: initial 
+        height: 100vh
+        .owl-carousel
+            max-height: inherit
+            height: inherit 
+            [class*="owl-stage"]
+                max-height: inherit
+                height: inherit 
+                .owl-item
+                    max-height: inherit
+                    height: inherit 
+            .item 
+                max-height: inherit
+                padding-top: 0
+                height: inherit 
+                .container
+                    align-items: center
+                    display: flex 
+                    flex-flow: column
+                    flex-wrap: wrap
+                    height: 100% 
+                    justify-content: flex-end
+                .btn 
+                    font-size: 2rem
+@media only screen and (max-height: 480px)
+    .webdoor 
+        .owl-carousel
+            .item 
+                padding-bottom: 75px
