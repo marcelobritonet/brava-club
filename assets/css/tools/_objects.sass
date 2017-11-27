@@ -1,59 +1,90 @@
-textarea[placeholder] 
-    text-overflow: ellipsis
-    color: #eaeaea
-    opacity: 1
-    font-weight: 300
- 
+html,
+body 
+    textarea[placeholder] 
+        text-overflow: ellipsis
+        color: #eaeaea
+        opacity: 1
+        font-weight: 300
+    
 
-input[placeholder] 
-    text-overflow: ellipsis
-    color: #eaeaea
-    opacity: 1 
-    font-weight: 300
-
-
-::-moz-placeholder 
-    text-overflow: ellipsis 
-    color: #eaeaea
-    opacity: 1
-    font-weight: 300
+    input[placeholder] 
+        text-overflow: ellipsis
+        color: #eaeaea
+        opacity: 1 
+        font-weight: 300
 
 
-input::-webkit-input-placeholder 
-    color: #eaeaea
-    opacity: 1
-    font-weight: 300
+    ::-moz-placeholder 
+        text-overflow: ellipsis 
+        color: #eaeaea
+        opacity: 1
+        font-weight: 300
 
 
-textarea::-webkit-input-placeholder 
-    color: #eaeaea
-    opacity: 1
-    font-weight: 300
+    input::-webkit-input-placeholder 
+        color: #eaeaea
+        opacity: 1
+        font-weight: 300
 
 
-input:-ms-input-placeholder 
-    color: #eaeaea
-    opacity: 1
-    font-weight: 300
+    textarea::-webkit-input-placeholder 
+        color: #eaeaea
+        opacity: 1
+        font-weight: 300
 
-textarea:-ms-input-placeholder 
-    color: #eaeaea
-    opacity: 1
-    font-weight: 300
 
-@for $i from 1 through 5
-    h#{$i}
-        font-weight: 800
+    input:-ms-input-placeholder 
+        color: #eaeaea
+        opacity: 1
+        font-weight: 300
 
-.btn 
-    +border(3px)
-    cursor: pointer
-    display: block 
-    text-align: center
-    &.-btn-1
-        &:hover 
-            background-color: $amarelo
-            border-color: rgba(255,255,255,0)
-        border: 1px white solid
-        color: white
-        text-transform: uppercase
+    textarea:-ms-input-placeholder 
+        color: #eaeaea
+        opacity: 1
+        font-weight: 300
+
+    @for $i from 1 through 5
+        h#{$i}
+            font-weight: 800
+
+    .btn 
+        +border(6px)
+        cursor: pointer
+        display: block 
+        text-align: center
+        &.-btn-1
+            &:hover 
+                background-color: $amarelo
+                border-color: rgba(255,255,255,0)
+            border: 1px white solid
+            color: white
+            text-transform: uppercase
+
+    p 
+        font-size: 1.3rem
+        line-height: 1.6em
+
+    h2  
+        font-size: 3rem 
+        &.title
+            &+h3 
+                @extend p
+                display: block
+                text-align: center
+            display: block 
+            font-weight: 300
+            margin-bottom: 30px
+            text-transform: uppercase
+            text-align: center
+
+    section 
+        &:not(.webdoor)
+            color: $gelo
+            &:nth-child(odd)
+                background-color: transparentize($gelo,0.95)
+                h2 
+                    &.title
+                        color: $amarelo
+            >.container 
+                padding-top: 85px
+                padding-bottom: 85px

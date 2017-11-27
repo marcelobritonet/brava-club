@@ -1575,90 +1575,154 @@
   animation-name: slideOutUp;
 }
 
-textarea[placeholder] {
+html textarea[placeholder],
+body textarea[placeholder] {
   text-overflow: ellipsis;
   color: #eaeaea;
   opacity: 1;
   font-weight: 300;
 }
 
-input[placeholder] {
+html input[placeholder],
+body input[placeholder] {
   text-overflow: ellipsis;
   color: #eaeaea;
   opacity: 1;
   font-weight: 300;
 }
 
-::-moz-placeholder {
+html ::-moz-placeholder,
+body ::-moz-placeholder {
   text-overflow: ellipsis;
   color: #eaeaea;
   opacity: 1;
   font-weight: 300;
 }
 
-input::-webkit-input-placeholder {
+html input::-webkit-input-placeholder,
+body input::-webkit-input-placeholder {
   color: #eaeaea;
   opacity: 1;
   font-weight: 300;
 }
 
-textarea::-webkit-input-placeholder {
+html textarea::-webkit-input-placeholder,
+body textarea::-webkit-input-placeholder {
   color: #eaeaea;
   opacity: 1;
   font-weight: 300;
 }
 
-input:-ms-input-placeholder {
+html input:-ms-input-placeholder,
+body input:-ms-input-placeholder {
   color: #eaeaea;
   opacity: 1;
   font-weight: 300;
 }
 
-textarea:-ms-input-placeholder {
+html textarea:-ms-input-placeholder,
+body textarea:-ms-input-placeholder {
   color: #eaeaea;
   opacity: 1;
   font-weight: 300;
 }
 
-h1 {
+html h1,
+body h1 {
   font-weight: 800;
 }
 
-h2 {
+html h2,
+body h2 {
   font-weight: 800;
 }
 
-h3 {
+html h3,
+body h3 {
   font-weight: 800;
 }
 
-h4 {
+html h4,
+body h4 {
   font-weight: 800;
 }
 
-h5 {
+html h5,
+body h5 {
   font-weight: 800;
 }
 
-.btn {
-  border-radius: 3px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -ms-border-radius: 3px;
+html .btn,
+body .btn {
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
   cursor: pointer;
   display: block;
   text-align: center;
 }
 
-.btn.-btn-1 {
+html .btn.-btn-1,
+body .btn.-btn-1 {
   border: 1px white solid;
   color: white;
   text-transform: uppercase;
 }
 
-.btn.-btn-1:hover {
+html .btn.-btn-1:hover,
+body .btn.-btn-1:hover {
   background-color: #ffb400;
   border-color: rgba(255, 255, 255, 0);
+}
+
+html p, html h2.title + h3, html
+body h2.title + h3,
+body p,
+body html h2.title + h3, body h2.title + h3 {
+  font-size: 1.3rem;
+  line-height: 1.6em;
+}
+
+html h2,
+body h2 {
+  font-size: 3rem;
+}
+
+html h2.title,
+body h2.title {
+  display: block;
+  font-weight: 300;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+html h2.title + h3,
+body h2.title + h3 {
+  display: block;
+  text-align: center;
+}
+
+html section:not(.webdoor),
+body section:not(.webdoor) {
+  color: #7f8c8c;
+}
+
+html section:not(.webdoor):nth-child(odd),
+body section:not(.webdoor):nth-child(odd) {
+  background-color: rgba(127, 140, 140, 0.05);
+}
+
+html section:not(.webdoor):nth-child(odd) h2.title,
+body section:not(.webdoor):nth-child(odd) h2.title {
+  color: #ffb400;
+}
+
+html section:not(.webdoor) > .container,
+body section:not(.webdoor) > .container {
+  padding-top: 85px;
+  padding-bottom: 85px;
 }
 
 html, body {
@@ -1740,7 +1804,8 @@ body a, html a {
   text-decoration: none !important;
 }
 
-body h1, body h2, body h3, body h4, body h5, body h6, body ol, body ul, body p, html h1, html h2, html h3, html h4, html h5, html h6, html ol, html ul, html p {
+body h1, body h2, body h3, body h4, body h5, body h6, body ol, body ul, body p, body html h2.title + h3, body h2.title + h3, html h1, html h2, html h3, html h4, html h5, html h6, html ol, html ul, html p, html h2.title + h3, html
+body h2.title + h3 {
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -1776,6 +1841,8 @@ h5,
 h6,
 hgroup blockquote,
 p,
+html h2.title + h3,
+body h2.title + h3,
 pre,
 span,
 a,
@@ -2281,6 +2348,10 @@ a {
   background-repeat: no-repeat;
   max-height: 580px;
   padding: calc(23% + 79px) 15px 150px;
+}
+
+.webdoor .owl-carousel .item h2 {
+  font-weight: normal;
 }
 
 .webdoor .owl-carousel .item .btn {
