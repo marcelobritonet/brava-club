@@ -1662,6 +1662,7 @@ html, body {
 
 html *, body * {
   font-family: inherit;
+  position: relative;
 }
 
 main {
@@ -2088,7 +2089,7 @@ a {
 
 .header {
   background-color: rgba(9, 156, 182, 0.9);
-  position: relative;
+  overflow: hidden;
   z-index: 10;
 }
 
@@ -2139,6 +2140,86 @@ a {
   }
   .header > .container > .navigation > ul, .header > .navigation.container > * > ul, .header > .container > .registration > ul, .header > .header.container > .container > ul, .header > .container > div > ul {
     justify-content: flex-end;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header h1 {
+    -webkit-animation: 1000ms left-to-right ease-in-out;
+    -moz-animation: 1000ms left-to-right ease-in-out;
+    -ms-animation: 1000ms left-to-right ease-in-out;
+    -o-animation: 1000ms left-to-right ease-in-out;
+    animation: 1000ms left-to-right ease-in-out;
+  }
+  .header > .container > * .registration > *:nth-child(1) {
+    -webkit-animation: 1.5s opacity ease-in-out;
+    -moz-animation: 1.5s opacity ease-in-out;
+    -ms-animation: 1.5s opacity ease-in-out;
+    -o-animation: 1.5s opacity ease-in-out;
+    animation: 1.5s opacity ease-in-out;
+  }
+  .header > .container > * .registration > *:nth-child(2) {
+    -webkit-animation: 3s opacity ease-in-out;
+    -moz-animation: 3s opacity ease-in-out;
+    -ms-animation: 3s opacity ease-in-out;
+    -o-animation: 3s opacity ease-in-out;
+    animation: 3s opacity ease-in-out;
+  }
+  .header > .container > *.navigation.-menu li:nth-child(1), .header > .navigation.container > *.-menu li:nth-child(1), .header > .container > *.-menu.registration li:nth-child(1), .header > .header.container > *.-menu.container li:nth-child(1), .header > .container > div.-menu li:nth-child(1) {
+    -webkit-animation: 0.4s bottom-opacity ease-in-out;
+    -moz-animation: 0.4s bottom-opacity ease-in-out;
+    -ms-animation: 0.4s bottom-opacity ease-in-out;
+    -o-animation: 0.4s bottom-opacity ease-in-out;
+    animation: 0.4s bottom-opacity ease-in-out;
+  }
+  .header > .container > *.navigation.-menu li:nth-child(2), .header > .navigation.container > *.-menu li:nth-child(2), .header > .container > *.-menu.registration li:nth-child(2), .header > .header.container > *.-menu.container li:nth-child(2), .header > .container > div.-menu li:nth-child(2) {
+    -webkit-animation: 0.8s bottom-opacity ease-in-out;
+    -moz-animation: 0.8s bottom-opacity ease-in-out;
+    -ms-animation: 0.8s bottom-opacity ease-in-out;
+    -o-animation: 0.8s bottom-opacity ease-in-out;
+    animation: 0.8s bottom-opacity ease-in-out;
+  }
+  .header > .container > *.navigation.-menu li:nth-child(3), .header > .navigation.container > *.-menu li:nth-child(3), .header > .container > *.-menu.registration li:nth-child(3), .header > .header.container > *.-menu.container li:nth-child(3), .header > .container > div.-menu li:nth-child(3) {
+    -webkit-animation: 1.2s bottom-opacity ease-in-out;
+    -moz-animation: 1.2s bottom-opacity ease-in-out;
+    -ms-animation: 1.2s bottom-opacity ease-in-out;
+    -o-animation: 1.2s bottom-opacity ease-in-out;
+    animation: 1.2s bottom-opacity ease-in-out;
+  }
+  .header > .container > *.navigation.-menu li:nth-child(4), .header > .navigation.container > *.-menu li:nth-child(4), .header > .container > *.-menu.registration li:nth-child(4), .header > .header.container > *.-menu.container li:nth-child(4), .header > .container > div.-menu li:nth-child(4) {
+    -webkit-animation: 1.6s bottom-opacity ease-in-out;
+    -moz-animation: 1.6s bottom-opacity ease-in-out;
+    -ms-animation: 1.6s bottom-opacity ease-in-out;
+    -o-animation: 1.6s bottom-opacity ease-in-out;
+    animation: 1.6s bottom-opacity ease-in-out;
+  }
+  .header > .container > *.navigation.-menu li:nth-child(5), .header > .navigation.container > *.-menu li:nth-child(5), .header > .container > *.-menu.registration li:nth-child(5), .header > .header.container > *.-menu.container li:nth-child(5), .header > .container > div.-menu li:nth-child(5) {
+    -webkit-animation: 2s bottom-opacity ease-in-out;
+    -moz-animation: 2s bottom-opacity ease-in-out;
+    -ms-animation: 2s bottom-opacity ease-in-out;
+    -o-animation: 2s bottom-opacity ease-in-out;
+    animation: 2s bottom-opacity ease-in-out;
+  }
+  .header > .container > *.navigation.-menu li:nth-child(6), .header > .navigation.container > *.-menu li:nth-child(6), .header > .container > *.-menu.registration li:nth-child(6), .header > .header.container > *.-menu.container li:nth-child(6), .header > .container > div.-menu li:nth-child(6) {
+    -webkit-animation: 2.4s bottom-opacity ease-in-out;
+    -moz-animation: 2.4s bottom-opacity ease-in-out;
+    -ms-animation: 2.4s bottom-opacity ease-in-out;
+    -o-animation: 2.4s bottom-opacity ease-in-out;
+    animation: 2.4s bottom-opacity ease-in-out;
+  }
+  .header > .container > *.navigation.-menu li:nth-child(7), .header > .navigation.container > *.-menu li:nth-child(7), .header > .container > *.-menu.registration li:nth-child(7), .header > .header.container > *.-menu.container li:nth-child(7), .header > .container > div.-menu li:nth-child(7) {
+    -webkit-animation: 2.8s bottom-opacity ease-in-out;
+    -moz-animation: 2.8s bottom-opacity ease-in-out;
+    -ms-animation: 2.8s bottom-opacity ease-in-out;
+    -o-animation: 2.8s bottom-opacity ease-in-out;
+    animation: 2.8s bottom-opacity ease-in-out;
+  }
+  .header > .container > *.navigation.-menu li:nth-child(8), .header > .navigation.container > *.-menu li:nth-child(8), .header > .container > *.-menu.registration li:nth-child(8), .header > .header.container > *.-menu.container li:nth-child(8), .header > .container > div.-menu li:nth-child(8) {
+    -webkit-animation: 3.2s bottom-opacity ease-in-out;
+    -moz-animation: 3.2s bottom-opacity ease-in-out;
+    -ms-animation: 3.2s bottom-opacity ease-in-out;
+    -o-animation: 3.2s bottom-opacity ease-in-out;
+    animation: 3.2s bottom-opacity ease-in-out;
   }
 }
 

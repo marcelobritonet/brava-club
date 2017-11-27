@@ -1,5 +1,6 @@
 .header 
     background-color: transparentize($azul,0.1)
+    overflow: hidden
     i ''
         display: inline-block
         margin-right: 5px
@@ -14,10 +15,9 @@
         @extend .navigation
         justify-content: space-between
         padding-top: 15px
-        padding-bottom: 15px
+        padding-bottom: 15px 
         >div 
             @extend .navigation
-    position: relative
     z-index: 10
 @media only screen and (min-width: 768px) and (max-width: 1140px)
     .header
@@ -40,6 +40,23 @@
                     width: calc(100% + 30px)
                 >ul  
                     justify-content: flex-end
+@media only screen and (min-width: 768px)
+    .header 
+        h1 
+            +animation(left-to-right,1000ms)
+        >.container
+            >*
+                .registration
+                    >* 
+                        @for $i from 1 through 2
+                            &:nth-child(#{$i})
+                                +animation(opacity,150s*$i/100)
+                &.navigation
+                    &.-menu 
+                        li
+                            @for $i from 1 through 8
+                                &:nth-child(#{$i})
+                                    +animation(bottom-opacity,40s*$i/100)
 @media only screen and (max-width: 768px)
     .header
         >.container
