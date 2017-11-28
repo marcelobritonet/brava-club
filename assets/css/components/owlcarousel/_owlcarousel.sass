@@ -1,3 +1,27 @@
+.owl-carousel
+    .item
+        background-size: cover 
+        background-position: center center
+        background-repeat: no-repeat
+    &.owl-theme
+        .owl-nav
+            display: block 
+            margin-top: -35px
+            left: 0
+            position: absolute
+            top: 50%
+            width: 100%
+            [class*=owl-]
+                +border(0px)
+                background: transparent 
+                font-size: 4rem
+                margin: 0
+                padding: 0 15px
+                &[class*="prev"]
+                    float: left 
+                &[class*="next"]
+                    float: right
+
 .webdoor
     .owl-carousel
         &.owl-theme
@@ -23,9 +47,6 @@
                     margin: 0 7px
                     max-width: 65px
         .item
-            background-size: cover 
-            background-position: center center
-            background-repeat: no-repeat
             max-height: 580px
             padding: calc(23% + 79px) 15px 150px
             h2 
@@ -35,6 +56,28 @@
                 max-width: 300px
                 margin: 0 auto
                 padding: 15px
+.acomodacoes
+    .owl-carousel   
+        padding: 0 60px
+        &.owl-theme
+            .owl-dots
+                margin-top: 30px
+                .owl-dot
+                    &.active span 
+                        background: $amarelo
+                    span 
+                        background: darken(gray,15%)
+                        height: 15px
+                        margin: 0 6px
+                        width: 15px
+            .owl-nav
+                margin-top: -50px
+                [class*=owl-]
+                    color: black
+            .item 
+                +border(10px)
+                cursor: pointer
+                padding: 0 0 70%
 @media only screen and (min-width: 1600px)  
     .webdoor
         .owl-carousel
@@ -50,6 +93,12 @@
         .owl-carousel
             .item 
                 padding: calc(23% + 125px) 15px 150px
+@media only screen and (max-width: 667px)      
+    .acomodacoes
+        .owl-carousel   
+            &.owl-theme
+                .owl-nav
+                    margin-top: -25px
 @media only screen and (max-width: 768px)
     .webdoor
         max-height: initial 
@@ -96,3 +145,14 @@
         .owl-carousel
             .item 
                 padding-bottom: 75px
+@media only screen and (max-width: 375px)
+    .acomodacoes
+        .owl-carousel   
+            &.owl-theme
+                .owl-nav
+                    [class*=owl-]
+                        &[class*="prev"]
+                            left: -20px
+                        &[class*="next"]
+                            right: -20px
+            padding: 0 30px

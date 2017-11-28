@@ -1,0 +1,41 @@
+.grid
+    align-items: stretch
+    @extend .flex
+    flex-flow: row
+    justify-content: center 
+    margin: 0 -15px
+    >*
+        @extend .flex
+        flex: 1
+        flex-flow: column 
+        padding: 0 15px
+        >h3 
+            font-weight: normal
+            text-transform: uppercase 
+        >.thumbnail
+            +border(6px)
+            background-size: cover 
+            background-position: left center 
+            background-repeat: no-repeaet 
+            display: block 
+            padding: 0 0 50%
+        &:not(.-horizontal)
+            >.thumbnail
+                &,&~*:not(:last-child)
+                    margin-bottom: 25px
+            >.btn 
+                align-self: flex-end
+        &.-horizontal
+            flex-flow: row
+@media only screen and (max-width: 414px)
+    .grid 
+        flex-flow: column 
+        >*
+            &:not(.-horizontal)
+                >.btn 
+                    align-self: center
+                    max-width: 100%
+            &:not(:last-child)
+                margin-bottom: 30px
+            p  
+                text-align: justify 
