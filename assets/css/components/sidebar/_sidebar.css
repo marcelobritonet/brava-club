@@ -1,0 +1,26 @@
+.sidebar {
+  flex: 0 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 300px;
+}
+
+.sidebar > div:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.sidebar > div > .title {
+  font-weight: normal;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.sidebar > div > ul > li {
+  display: block;
+  padding: 0 0 10px;
+}
+
+.sidebar > div > ul > li:not(:last-child) {
+  margin-bottom: 10px;
+}

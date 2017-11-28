@@ -1805,12 +1805,33 @@ main {
   padding-right: 15px;
 }
 
-.flex, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, section.contato > .container > .title + ul {
+.flex, .conteudo > .container, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, section.contato > .container > .title + ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   flex-wrap: wrap !important;
+}
+
+.conteudo > .container {
+  align-items: stretch;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.conteudo > .container .feed {
+  flex: 1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+  .conteudo > .container {
+    flex-flow: column;
+  }
+  .conteudo > .container .feed {
+    order: 1;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1140px) {
@@ -2835,6 +2856,65 @@ footer .container {
   padding: 0 7px;
 }
 
+.sidebar {
+  flex: 0 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 300px;
+}
+
+.sidebar > div:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.sidebar > div > .title {
+  font-weight: normal;
+  font-size: 3rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.sidebar > div > ul > li {
+  display: block;
+  position: relative;
+  padding: 0 0 10px;
+}
+
+.sidebar > div > ul > li::after {
+  background-color: #ff9c00;
+  bottom: -2px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  -webkit-transition: width 1000ms;
+  -moz-transition: width 1000ms;
+  -ms-transition: width 1000ms;
+  -o-transition: width 1000ms;
+  transition: width 1000ms;
+  width: 0%;
+}
+
+.sidebar > div > ul > li:hover {
+  color: #ff9c00;
+}
+
+.sidebar > div > ul > li:hover::after {
+  width: 100%;
+}
+
+.sidebar > div > ul > li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .sidebar {
+    margin-top: 30px;
+    order: 2;
+    width: initial;
+  }
+}
+
 section.contato {
   background-color: rgba(9, 156, 182, 0.15) !important;
 }
@@ -2909,7 +2989,7 @@ body section.contato > .container > .title + ul > * > h2.title + h3 > * {
 }
 
 .pg-interna .owl-carousel.owl-theme .item {
-  padding: 140px 15px 150px !important;
+  padding: 180px 15px 150px !important;
 }
 
 .pg-interna .owl-carousel.owl-theme .item::after {
