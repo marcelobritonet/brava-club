@@ -2162,7 +2162,7 @@ a {
 }
 
 .navigation.-mobile-navigation.-active, .navigation > .-mobile-navigation.-active, .-mobile-navigation.-active.registration, .header > .-mobile-navigation.-active.container, .header > .container > div.-mobile-navigation.-active {
-  height: 600px;
+  height: auto;
 }
 
 .navigation.-mobile-navigation > ul, .navigation > .-mobile-navigation > ul, .-mobile-navigation.registration > ul, .header > .-mobile-navigation.container > ul, .header > .container > div.-mobile-navigation > ul {
@@ -2174,6 +2174,7 @@ a {
   display: inherit;
   margin: 0 0 !important;
   padding: 15px;
+  text-align: left;
 }
 
 .navigation.-mobile-navigation > ul > li > a::after, .navigation > .-mobile-navigation > ul > li > a::after, .-mobile-navigation.registration > ul > li > a::after, .header > .-mobile-navigation.container > ul > li > a::after, .header > .container > div.-mobile-navigation > ul > li > a::after {
@@ -2232,7 +2233,7 @@ a {
   text-transform: inherit;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .navigation.-mobile-navigation.-active, .navigation > .-mobile-navigation.-active, .-mobile-navigation.-active.registration, .header > .-mobile-navigation.-active.container, .header > .container > div.-mobile-navigation.-active {
     height: 100vh;
     overflow: auto;
@@ -2316,6 +2317,8 @@ a {
   .header > .container > .navigation.-menu, .header > .navigation.container > .-menu, .header > .container > .-menu.registration, .header > .header.container > .-menu.container, .header > .container > div.-menu {
     background-color: rgba(9, 156, 182, 0.9);
     margin-bottom: -15px;
+    margin-left: -30px;
+    margin-right: -30px;
     padding: 15px;
     width: calc(100% + 30px);
   }
@@ -2427,7 +2430,7 @@ a {
 
 .owl-carousel.owl-theme .owl-nav {
   display: block;
-  margin-top: -35px;
+  margin-top: 0;
   left: 0;
   position: absolute;
   top: 50%;
@@ -2487,7 +2490,7 @@ a {
 
 .webdoor .owl-carousel .item {
   max-height: 580px;
-  padding: calc(23% + 79px) 15px 150px;
+  padding: calc(25vw + 79px) 15px 150px;
 }
 
 .webdoor .owl-carousel .item h2 {
@@ -2545,13 +2548,13 @@ a {
 
 @media only screen and (min-width: 1140px) and (max-width: 1600px) {
   .webdoor .owl-carousel .item {
-    padding: 23% 15px 150px;
+    padding: 25vw 15px 150px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1140px) {
   .webdoor .owl-carousel .item {
-    padding: calc(23% + 125px) 15px 150px;
+    padding: calc(25vw + 125px) 15px 150px;
   }
 }
 
@@ -2561,7 +2564,7 @@ a {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .webdoor {
     max-height: initial;
     height: 100vh;
@@ -2748,7 +2751,7 @@ a {
   width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .map {
     height: 100vh;
   }
@@ -2895,4 +2898,20 @@ body section.contato > .container > .title + ul > * > h2.title + h3 > * {
   section.contato > .container > .title + ul > *:not(:last-child) {
     margin-bottom: 30px;
   }
+}
+
+.pg-interna .webdoor {
+  height: initial;
+}
+
+.pg-interna .owl-carousel.owl-theme .owl-nav {
+  display: none;
+}
+
+.pg-interna .owl-carousel.owl-theme .item {
+  padding: 140px 15px 150px !important;
+}
+
+.pg-interna .owl-carousel.owl-theme .item::after {
+  display: none;
 }
