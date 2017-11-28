@@ -2,6 +2,22 @@
     align-items: center
     @extend .flex
     flex-flow: row   
+    &.-mobile-navigation
+        display: block
+        height: 0
+        overflow: hidden
+        &.-active
+            height: 600px
+        >ul  
+            display: inherit 
+            >li
+                border-bottom: 1px rgba(0,0,0,.1) solid  
+                display: inherit 
+                margin: 0 0 !important
+                padding: 15px
+                >a  
+                    &::after 
+                        display: none !important
     &.-menu
         >ul  
             width: 100%
@@ -35,3 +51,9 @@
             font-size: 1.3rem
             text-align: inherit
             text-transform: inherit
+@media only screen and (max-width: 768px)
+    .navigation
+        &.-mobile-navigation
+            &.-active
+                height: 100vh
+                overflow: auto

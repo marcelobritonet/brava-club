@@ -1,0 +1,48 @@
+footer 
+    background-color: $cyan
+    color: white  
+    overflow: hidden
+    h3 
+        color: darken($cyan,25%)
+    .footer
+        >.container
+            align-items: center
+            @extend .flex
+            flex-flow: row
+            justify-content: space-between
+    .copyright 
+        background-color: white 
+        ul  
+            align-items: center 
+            @extend .flex
+            flex-flow: row 
+            justify-content: center
+            margin: 0 -55px
+            >li  
+                padding: 0 55px 
+    .grid 
+        h3  
+            &+*
+                padding-left: 30px
+            margin-bottom: 20px
+            text-transform: initial 
+    .container
+        padding-top: 30px 
+        padding-bottom: 30px
+@media only screen and (max-width: 736px)
+    footer
+        .copyright
+            ul
+                margin: 0 0 -25px
+                padding: 0 15px                
+                >li  
+                    flex: 1
+                    padding: 0px 15px 30px
+                    text-align: center      
+@media only screen and (max-width: 414px)
+    footer  
+        text-align: center             
+        .grid 
+            h3
+                &+*
+                    padding-left: 0

@@ -1575,6 +1575,11 @@
   animation-name: slideOutUp;
 }
 
+html,
+body {
+  min-width: 320px;
+}
+
 html textarea[placeholder],
 body textarea[placeholder] {
   text-overflow: ellipsis;
@@ -1666,6 +1671,7 @@ body .btn {
 html .btn.-btn-2,
 body .btn.-btn-2 {
   background-color: #5a5a5a;
+  box-shadow: 0px -5px 0px 0px rgba(0, 0, 0, 0.2) inset;
   color: white;
   max-width: 200px;
   padding: 15px;
@@ -1719,6 +1725,11 @@ body h2.title + h3 {
   text-align: center;
 }
 
+html h3,
+body h3 {
+  font-size: 1.6rem;
+}
+
 html section:not(.webdoor),
 body section:not(.webdoor) {
   color: #7f8c8c;
@@ -1766,6 +1777,12 @@ body .mais > span {
   text-transform: uppercase;
 }
 
+html .mais:hover > span,
+body .mais:hover > span {
+  color: #ff9c00;
+  text-decoration: none;
+}
+
 html, body {
   font-family: 'Roboto', sans-serif !important;
 }
@@ -1788,7 +1805,7 @@ main {
   padding-right: 15px;
 }
 
-.flex, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > * {
+.flex, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, section#contato > .container > .title + ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -2138,6 +2155,31 @@ a {
   flex-flow: row;
 }
 
+.navigation.-mobile-navigation, .navigation > .-mobile-navigation, .-mobile-navigation.registration, .header > .-mobile-navigation.container, .header > .container > div.-mobile-navigation {
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+.navigation.-mobile-navigation.-active, .navigation > .-mobile-navigation.-active, .-mobile-navigation.-active.registration, .header > .-mobile-navigation.-active.container, .header > .container > div.-mobile-navigation.-active {
+  height: 600px;
+}
+
+.navigation.-mobile-navigation > ul, .navigation > .-mobile-navigation > ul, .-mobile-navigation.registration > ul, .header > .-mobile-navigation.container > ul, .header > .container > div.-mobile-navigation > ul {
+  display: inherit;
+}
+
+.navigation.-mobile-navigation > ul > li, .navigation > .-mobile-navigation > ul > li, .-mobile-navigation.registration > ul > li, .header > .-mobile-navigation.container > ul > li, .header > .container > div.-mobile-navigation > ul > li {
+  border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+  display: inherit;
+  margin: 0 0 !important;
+  padding: 15px;
+}
+
+.navigation.-mobile-navigation > ul > li > a::after, .navigation > .-mobile-navigation > ul > li > a::after, .-mobile-navigation.registration > ul > li > a::after, .header > .-mobile-navigation.container > ul > li > a::after, .header > .container > div.-mobile-navigation > ul > li > a::after {
+  display: none !important;
+}
+
 .navigation.-menu > ul, .navigation > .-menu > ul, .-menu.registration > ul, .header > .-menu.container > ul, .header > .container > div.-menu > ul {
   width: 100%;
 }
@@ -2190,6 +2232,13 @@ a {
   text-transform: inherit;
 }
 
+@media only screen and (max-width: 768px) {
+  .navigation.-mobile-navigation.-active, .navigation > .-mobile-navigation.-active, .-mobile-navigation.-active.registration, .header > .-mobile-navigation.-active.container, .header > .container > div.-mobile-navigation.-active {
+    height: 100vh;
+    overflow: auto;
+  }
+}
+
 .registration i {
   margin-right: 8px;
 }
@@ -2204,6 +2253,25 @@ a {
   background-color: rgba(9, 156, 182, 0.9);
   overflow: hidden;
   z-index: 10;
+}
+
+.header.-sticky {
+  left: 0;
+  opacity: 0;
+  position: fixed;
+  top: -150px;
+  -webkit-transition: all ease-out 0.2s;
+  -moz-transition: all ease-out 0.2s;
+  -ms-transition: all ease-out 0.2s;
+  -o-transition: all ease-out 0.2s;
+  transition: all ease-out 0.2s;
+  width: 100%;
+  z-index: 50;
+}
+
+.header.-sticky.-stuck {
+  opacity: 1;
+  top: 0;
 }
 
 .header i '' {
@@ -2228,7 +2296,7 @@ a {
   padding-bottom: 15px;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1140px) {
+@media only screen and (min-width: 769px) and (max-width: 1140px) {
   .header > .container {
     flex-flow: column;
   }
@@ -2256,7 +2324,7 @@ a {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 76px) {
   .header h1 {
     -webkit-animation: 1000ms left-to-right ease-in-out;
     -moz-animation: 1000ms left-to-right ease-in-out;
@@ -2570,21 +2638,14 @@ a {
   align-items: stretch;
   flex-flow: row;
   justify-content: center;
-  margin: 0 -15px;
 }
 
-.grid > * {
-  flex: 1;
-  flex-flow: column;
-  padding: 0 15px;
-}
-
-.grid > * > h3 {
+.grid h3 {
   font-weight: normal;
   text-transform: uppercase;
 }
 
-.grid > * > .thumbnail {
+.grid .thumbnail {
   border-radius: 6px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -2593,28 +2654,82 @@ a {
   background-position: left center;
   background-repeat: no-repeaet;
   display: block;
-  padding: 0 0 50%;
+  padding: 0 0 15vw;
 }
 
-.grid > *:not(.-horizontal) > .thumbnail, .grid > *:not(.-horizontal) > .thumbnail ~ *:not(:last-child) {
-  margin-bottom: 25px;
-}
-
-.grid > *:not(.-horizontal) > .btn {
+.grid .btn {
   align-self: flex-end;
 }
 
-.grid > *.-horizontal {
-  flex-flow: row;
+.grid > * {
+  flex: 1;
+  flex-flow: column;
+  padding: 0 15px;
 }
 
-@media only screen and (max-width: 414px) {
+.grid > *:not(.-horizontal) .thumbnail, .grid > *:not(.-horizontal) .thumbnail ~ *:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+.grid > *.-horizontal {
+  align-items: flex-start;
+  flex-flow: row;
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.grid > *.-horizontal:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.grid > *.-horizontal .thumbnail {
+  padding: 0 0 12vw;
+}
+
+.grid > *.-horizontal h3, .grid > *.-horizontal h3 ~ *:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.grid > *.-horizontal > * {
+  flex: 0 0 auto;
+  width: 50%;
+}
+
+.grid > *.-horizontal > *:last-child {
+  padding-left: 30px;
+}
+
+@media only screen and (min-height: 768px) and (max-width: 1024px) {
+  .grid > .-horizontal .thumbnail {
+    padding: 0 0 20vw;
+  }
+}
+
+@media only screen and (max-width: 1140px) {
+  .grid > *.-horizontal {
+    flex-flow: column;
+  }
+  .grid > *.-horizontal .thumbnail, .grid > *.-horizontal .thumbnail ~ *:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+  .grid > *.-horizontal > * {
+    width: 100%;
+  }
+  .grid > *.-horizontal > *:last-of-type {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 736px) {
   .grid {
     flex-flow: column;
   }
-  .grid > *:not(.-horizontal) > .btn {
+  .grid .thumbnail {
+    padding: 0 0 45vw !important;
+  }
+  .grid .btn {
     align-self: center;
-    max-width: 100%;
+    max-width: 100% !important;
   }
   .grid > *:not(:last-child) {
     margin-bottom: 30px;
@@ -2623,5 +2738,161 @@ a {
   body h2.title + h3,
   body .grid > * h2.title + h3 {
     text-align: justify;
+  }
+}
+
+.map {
+  display: block;
+  height: 500px;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .map {
+    height: 100vh;
+  }
+}
+
+footer {
+  background-color: #66cccc;
+  color: white;
+  overflow: hidden;
+}
+
+footer h3 {
+  color: #2d8686;
+}
+
+footer .footer > .container {
+  align-items: center;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+footer .copyright {
+  background-color: white;
+}
+
+footer .copyright ul {
+  align-items: center;
+  flex-flow: row;
+  justify-content: center;
+  margin: 0 -55px;
+}
+
+footer .copyright ul > li {
+  padding: 0 55px;
+}
+
+footer .grid h3 {
+  margin-bottom: 20px;
+  text-transform: initial;
+}
+
+footer .grid h3 + * {
+  padding-left: 30px;
+}
+
+footer .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 736px) {
+  footer .copyright ul {
+    margin: 0 0 -25px;
+    padding: 0 15px;
+  }
+  footer .copyright ul > li {
+    flex: 1;
+    padding: 0px 15px 30px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  footer {
+    text-align: center;
+  }
+  footer .grid h3 + * {
+    padding-left: 0;
+  }
+}
+
+.social {
+  margin: 0 -7px;
+}
+
+.social > * {
+  color: white;
+  display: inline-block;
+  font-size: 19px;
+  vertical-align: middle;
+  padding: 0 7px;
+}
+
+section#contato {
+  background-color: rgba(9, 156, 182, 0.15) !important;
+}
+
+section#contato .map {
+  border-bottom: 20px rgba(9, 156, 182, 0.15) solid;
+}
+
+section#contato > .container > .title {
+  color: #b3b3b3;
+}
+
+section#contato > .container > .title + ul {
+  flex-flow: row;
+  margin: 0 -15px;
+}
+
+section#contato > .container > .title + ul > * {
+  text-align: center;
+  flex: 1;
+  padding: 0 15px;
+}
+
+section#contato > .container > .title + ul > * > p, html section#contato > .container > .title + ul > * > h2.title + h3,
+body section#contato > .container > .title + ul > * > h2.title + h3 {
+  font-weight: bold;
+}
+
+section#contato > .container > .title + ul > * > p > i, html section#contato > .container > .title + ul > * > h2.title + h3 > i,
+body section#contato > .container > .title + ul > * > h2.title + h3 > i {
+  color: #ff9c00;
+  font-size: 2.7rem;
+  font-weight: initial;
+  margin-right: 15px;
+}
+
+section#contato > .container > .title + ul > * > p > *, html section#contato > .container > .title + ul > * > h2.title + h3 > *,
+body section#contato > .container > .title + ul > * > h2.title + h3 > * {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 736px) {
+  section#contato > .container > .title + ul > * > p > *, html section#contato > .container > .title + ul > * > h2.title + h3 > *,
+  body section#contato > .container > .title + ul > * > h2.title + h3 > * {
+    display: block;
+    text-align: inherit;
+  }
+  section#contato > .container > .title + ul > * > p > i, html section#contato > .container > .title + ul > * > h2.title + h3 > i,
+  body section#contato > .container > .title + ul > * > h2.title + h3 > i {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  section#contato > .container > .title + ul {
+    flex-flow: column;
+  }
+  section#contato > .container > .title + ul > *:not(:last-child) {
+    margin-bottom: 30px;
   }
 }
