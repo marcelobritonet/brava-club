@@ -2915,6 +2915,18 @@ footer .container {
   }
 }
 
+.post img {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+}
+
+.post img, .post img ~ *:not(:last-child) {
+  display: block;
+  margin-bottom: 15px;
+}
+
 section.contato {
   background-color: rgba(9, 156, 182, 0.15) !important;
 }
@@ -2978,6 +2990,10 @@ body section.contato > .container > .title + ul > * > h2.title + h3 > * {
   section.contato > .container > .title + ul > *:not(:last-child) {
     margin-bottom: 30px;
   }
+}
+
+.pg-interna main {
+  background-color: #fafafa;
 }
 
 .pg-interna .webdoor {
