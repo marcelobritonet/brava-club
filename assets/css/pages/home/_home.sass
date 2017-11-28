@@ -1,5 +1,5 @@
 section 
-    &#contato 
+    &.contato 
         background-color: transparentize($azul,0.85) !important
         .map 
             border-bottom: 20px transparentize($azul,0.85) solid
@@ -11,7 +11,7 @@ section
                     flex-flow: row 
                     margin: 0 -15px
                     >* 
-                        text-align: center 
+                        text-align: center    
                         >p  
                             font-weight: bold 
                             >i  
@@ -27,7 +27,7 @@ section
                         padding: 0 15px
 @media only screen and (max-width: 736px) 
     section 
-        &#contato 
+        &.contato 
             >.container
                 >.title
                     &+ul
@@ -41,7 +41,7 @@ section
                                     margin-bottom: 15px
 @media only screen and (max-width: 414px) 
     section 
-        &#contato 
+        &.contato 
             >.container
                 >.title
                     &+ul

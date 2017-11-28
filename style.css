@@ -1805,7 +1805,7 @@ main {
   padding-right: 15px;
 }
 
-.flex, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, section#contato > .container > .title + ul {
+.flex, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, section.contato > .container > .title + ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -1868,7 +1868,7 @@ body h2.title + h3 {
   margin-top: 0;
 }
 
-#wrap {
+.wrap {
   overflow: hidden;
 }
 
@@ -2832,67 +2832,67 @@ footer .container {
   padding: 0 7px;
 }
 
-section#contato {
+section.contato {
   background-color: rgba(9, 156, 182, 0.15) !important;
 }
 
-section#contato .map {
+section.contato .map {
   border-bottom: 20px rgba(9, 156, 182, 0.15) solid;
 }
 
-section#contato > .container > .title {
+section.contato > .container > .title {
   color: #b3b3b3;
 }
 
-section#contato > .container > .title + ul {
+section.contato > .container > .title + ul {
   flex-flow: row;
   margin: 0 -15px;
 }
 
-section#contato > .container > .title + ul > * {
+section.contato > .container > .title + ul > * {
   text-align: center;
   flex: 1;
   padding: 0 15px;
 }
 
-section#contato > .container > .title + ul > * > p, html section#contato > .container > .title + ul > * > h2.title + h3,
-body section#contato > .container > .title + ul > * > h2.title + h3 {
+section.contato > .container > .title + ul > * > p, html section.contato > .container > .title + ul > * > h2.title + h3,
+body section.contato > .container > .title + ul > * > h2.title + h3 {
   font-weight: bold;
 }
 
-section#contato > .container > .title + ul > * > p > i, html section#contato > .container > .title + ul > * > h2.title + h3 > i,
-body section#contato > .container > .title + ul > * > h2.title + h3 > i {
+section.contato > .container > .title + ul > * > p > i, html section.contato > .container > .title + ul > * > h2.title + h3 > i,
+body section.contato > .container > .title + ul > * > h2.title + h3 > i {
   color: #ff9c00;
   font-size: 2.7rem;
   font-weight: initial;
   margin-right: 15px;
 }
 
-section#contato > .container > .title + ul > * > p > *, html section#contato > .container > .title + ul > * > h2.title + h3 > *,
-body section#contato > .container > .title + ul > * > h2.title + h3 > * {
+section.contato > .container > .title + ul > * > p > *, html section.contato > .container > .title + ul > * > h2.title + h3 > *,
+body section.contato > .container > .title + ul > * > h2.title + h3 > * {
   display: inline-block;
   text-align: left;
   vertical-align: middle;
 }
 
 @media only screen and (max-width: 736px) {
-  section#contato > .container > .title + ul > * > p > *, html section#contato > .container > .title + ul > * > h2.title + h3 > *,
-  body section#contato > .container > .title + ul > * > h2.title + h3 > * {
+  section.contato > .container > .title + ul > * > p > *, html section.contato > .container > .title + ul > * > h2.title + h3 > *,
+  body section.contato > .container > .title + ul > * > h2.title + h3 > * {
     display: block;
     text-align: inherit;
   }
-  section#contato > .container > .title + ul > * > p > i, html section#contato > .container > .title + ul > * > h2.title + h3 > i,
-  body section#contato > .container > .title + ul > * > h2.title + h3 > i {
+  section.contato > .container > .title + ul > * > p > i, html section.contato > .container > .title + ul > * > h2.title + h3 > i,
+  body section.contato > .container > .title + ul > * > h2.title + h3 > i {
     margin-right: 0;
     margin-bottom: 15px;
   }
 }
 
 @media only screen and (max-width: 414px) {
-  section#contato > .container > .title + ul {
+  section.contato > .container > .title + ul {
     flex-flow: column;
   }
-  section#contato > .container > .title + ul > *:not(:last-child) {
+  section.contato > .container > .title + ul > *:not(:last-child) {
     margin-bottom: 30px;
   }
 }
