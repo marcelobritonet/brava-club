@@ -1,0 +1,1 @@
+.item-list>*{display:block}.item-list>*::before{content:"\f105";display:inline-block;font:normal normal normal 14px/1 FontAwesome;margin-right:5px;vertical-align:middle}.item-list>*:not(:last-child){margin-bottom:15px}

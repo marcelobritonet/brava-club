@@ -21,7 +21,6 @@
                     float: left 
                 &[class*="next"]
                     float: right
-
 .webdoor
     .owl-carousel
         &.owl-theme
@@ -56,6 +55,7 @@
                 max-width: 300px
                 margin: 0 auto
                 padding: 15px
+.galeria,
 .acomodacoes
     .owl-carousel   
         padding: 0 60px
@@ -78,6 +78,34 @@
                 +border(10px)
                 cursor: pointer
                 padding: 0 0 70%
+.galeria
+    .owl-carousel
+        padding: 0
+        &.owl-theme
+            .owl-dots
+                bottom: -40px
+                left: 0
+                position: absolute
+                width: calc(100% - 110px)
+            .owl-nav 
+                [class*=owl-]
+                    color: black
+                bottom: -50px
+                left: initial
+                right: 0
+                top: initial
+                width: 110px
+.pg-interna
+    .webdoor 
+        height: initial
+    .owl-carousel
+        &.owl-theme
+            .owl-nav 
+                display: none
+            .item 
+                &::after 
+                    display: none
+                padding: 180px 15px 150px !important 
 @media only screen and (min-width: 1600px)  
     .webdoor
         .owl-carousel
@@ -100,6 +128,11 @@
                 .owl-nav
                     margin-top: -25px
 @media only screen and (max-width: 767px)
+    .galeria
+        .owl-carousel
+            &.owl-theme
+                .owl-nav
+                    bottom: 0
     .webdoor
         max-height: initial 
         height: 100vh
