@@ -125,3 +125,25 @@ body
         &:hover > span  
             color: $laranja
             text-decoration: none 
+
+    .underline-item
+        &::before,
+        &::after    
+            background-color: $laranja
+            bottom: -2px
+            content: ""
+            height: 2px
+            left: 0
+            position: absolute
+            +width(1000ms)
+            width: 0%
+        &::before 
+            display: none 
+        &:hover
+            color: $laranja
+            &::before, 
+            &::after 
+                width: 100%
+        position: relative
+        padding-bottom: 10px
+            

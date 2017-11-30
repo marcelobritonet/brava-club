@@ -28,18 +28,8 @@
                 &:last-child 
                     display: none 
                 >a  
-                    &::after 
-                        background-color: $amarelo
-                        bottom: -4px
-                        content: ""
-                        display: block
-                        height: 2px 
-                        position: absolute 
-                        +width(1000ms)
-                        width: 0%
-                    &:hover::after 
-                        width: 100%
-                    position: relative 
+                    @extend .underline-item
+                    padding-bottom: 5px!important
     >* 
         @extend .navigation
         &:not(:last-child)

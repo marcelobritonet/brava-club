@@ -1790,6 +1790,101 @@ body .mais:hover > span {
   text-decoration: none;
 }
 
+html .underline-item, html .navigation.-menu > ul > li > a, html .navigation > .-menu > ul > li > a, html .-menu.registration > ul > li > a, html .header > .-menu.container > ul > li > a, html .header > .container > div.-menu > ul > li > a, html .sidebar > div > ul > li, html .tabs.photo-grid .tabs-navigation > li, .tabs.photo-grid html .tabs-navigation > li,
+body .underline-item,
+body .navigation.-menu > ul > li > a,
+body .navigation > .-menu > ul > li > a,
+body .-menu.registration > ul > li > a,
+body .header > .-menu.container > ul > li > a,
+body .header > .container > div.-menu > ul > li > a,
+body .sidebar > div > ul > li,
+body .tabs.photo-grid .tabs-navigation > li, .tabs.photo-grid
+body .tabs-navigation > li {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+html .underline-item::before, html .navigation.-menu > ul > li > a::before, html .navigation > .-menu > ul > li > a::before, html .-menu.registration > ul > li > a::before, html .header > .-menu.container > ul > li > a::before, html .header > .container > div.-menu > ul > li > a::before, html .sidebar > div > ul > li::before, html .tabs.photo-grid .tabs-navigation > li::before, .tabs.photo-grid html .tabs-navigation > li::before, html .underline-item::after, html .navigation.-menu > ul > li > a::after, html .navigation > .-menu > ul > li > a::after, html .-menu.registration > ul > li > a::after, html .header > .-menu.container > ul > li > a::after, html .header > .container > div.-menu > ul > li > a::after, html .sidebar > div > ul > li::after, html .tabs.photo-grid .tabs-navigation > li::after, .tabs.photo-grid html .tabs-navigation > li::after,
+body .underline-item::before,
+body .navigation.-menu > ul > li > a::before,
+body .navigation > .-menu > ul > li > a::before,
+body .-menu.registration > ul > li > a::before,
+body .header > .-menu.container > ul > li > a::before,
+body .header > .container > div.-menu > ul > li > a::before,
+body .sidebar > div > ul > li::before,
+body .tabs.photo-grid .tabs-navigation > li::before, .tabs.photo-grid
+body .tabs-navigation > li::before,
+body .underline-item::after,
+body .navigation.-menu > ul > li > a::after,
+body .navigation > .-menu > ul > li > a::after,
+body .-menu.registration > ul > li > a::after,
+body .header > .-menu.container > ul > li > a::after,
+body .header > .container > div.-menu > ul > li > a::after,
+body .sidebar > div > ul > li::after,
+body .tabs.photo-grid .tabs-navigation > li::after, .tabs.photo-grid
+body .tabs-navigation > li::after {
+  background-color: #ff9c00;
+  bottom: -2px;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  -webkit-transition: width 1000ms;
+  -moz-transition: width 1000ms;
+  -ms-transition: width 1000ms;
+  -o-transition: width 1000ms;
+  transition: width 1000ms;
+  width: 0%;
+}
+
+html .underline-item::before, html .navigation.-menu > ul > li > a::before, html .navigation > .-menu > ul > li > a::before, html .-menu.registration > ul > li > a::before, html .header > .-menu.container > ul > li > a::before, html .header > .container > div.-menu > ul > li > a::before, html .sidebar > div > ul > li::before, html .tabs.photo-grid .tabs-navigation > li::before, .tabs.photo-grid html .tabs-navigation > li::before,
+body .underline-item::before,
+body .navigation.-menu > ul > li > a::before,
+body .navigation > .-menu > ul > li > a::before,
+body .-menu.registration > ul > li > a::before,
+body .header > .-menu.container > ul > li > a::before,
+body .header > .container > div.-menu > ul > li > a::before,
+body .sidebar > div > ul > li::before,
+body .tabs.photo-grid .tabs-navigation > li::before, .tabs.photo-grid
+body .tabs-navigation > li::before {
+  display: none;
+}
+
+html .underline-item:hover, html .navigation.-menu > ul > li > a:hover, html .navigation > .-menu > ul > li > a:hover, html .-menu.registration > ul > li > a:hover, html .header > .-menu.container > ul > li > a:hover, html .header > .container > div.-menu > ul > li > a:hover, html .sidebar > div > ul > li:hover, html .tabs.photo-grid .tabs-navigation > li:hover, .tabs.photo-grid html .tabs-navigation > li:hover,
+body .underline-item:hover,
+body .navigation.-menu > ul > li > a:hover,
+body .navigation > .-menu > ul > li > a:hover,
+body .-menu.registration > ul > li > a:hover,
+body .header > .-menu.container > ul > li > a:hover,
+body .header > .container > div.-menu > ul > li > a:hover,
+body .sidebar > div > ul > li:hover,
+body .tabs.photo-grid .tabs-navigation > li:hover, .tabs.photo-grid
+body .tabs-navigation > li:hover {
+  color: #ff9c00;
+}
+
+html .underline-item:hover::before, html .navigation.-menu > ul > li > a:hover::before, html .navigation > .-menu > ul > li > a:hover::before, html .-menu.registration > ul > li > a:hover::before, html .header > .-menu.container > ul > li > a:hover::before, html .header > .container > div.-menu > ul > li > a:hover::before, html .sidebar > div > ul > li:hover::before, html .tabs.photo-grid .tabs-navigation > li:hover::before, .tabs.photo-grid html .tabs-navigation > li:hover::before, html .underline-item:hover::after, html .navigation.-menu > ul > li > a:hover::after, html .navigation > .-menu > ul > li > a:hover::after, html .-menu.registration > ul > li > a:hover::after, html .header > .-menu.container > ul > li > a:hover::after, html .header > .container > div.-menu > ul > li > a:hover::after, html .sidebar > div > ul > li:hover::after, html .tabs.photo-grid .tabs-navigation > li:hover::after, .tabs.photo-grid html .tabs-navigation > li:hover::after,
+body .underline-item:hover::before,
+body .navigation.-menu > ul > li > a:hover::before,
+body .navigation > .-menu > ul > li > a:hover::before,
+body .-menu.registration > ul > li > a:hover::before,
+body .header > .-menu.container > ul > li > a:hover::before,
+body .header > .container > div.-menu > ul > li > a:hover::before,
+body .sidebar > div > ul > li:hover::before,
+body .tabs.photo-grid .tabs-navigation > li:hover::before, .tabs.photo-grid
+body .tabs-navigation > li:hover::before,
+body .underline-item:hover::after,
+body .navigation.-menu > ul > li > a:hover::after,
+body .navigation > .-menu > ul > li > a:hover::after,
+body .-menu.registration > ul > li > a:hover::after,
+body .header > .-menu.container > ul > li > a:hover::after,
+body .header > .container > div.-menu > ul > li > a:hover::after,
+body .sidebar > div > ul > li:hover::after,
+body .tabs.photo-grid .tabs-navigation > li:hover::after, .tabs.photo-grid
+body .tabs-navigation > li:hover::after {
+  width: 100%;
+}
+
 html, body {
   font-family: 'Roboto', sans-serif !important;
 }
@@ -1812,7 +1907,7 @@ main {
   padding-right: 15px;
 }
 
-.flex, .panels > .container, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, section.contato > .container > .title + ul {
+.flex, .panels > .container, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, .tabs.photo-grid .tabs-content, .modal.open, section.contato > .container > .title + ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -2227,26 +2322,7 @@ a {
 }
 
 .navigation.-menu > ul > li > a, .navigation > .-menu > ul > li > a, .-menu.registration > ul > li > a, .header > .-menu.container > ul > li > a, .header > .container > div.-menu > ul > li > a {
-  position: relative;
-}
-
-.navigation.-menu > ul > li > a::after, .navigation > .-menu > ul > li > a::after, .-menu.registration > ul > li > a::after, .header > .-menu.container > ul > li > a::after, .header > .container > div.-menu > ul > li > a::after {
-  background-color: #ffb400;
-  bottom: -4px;
-  content: "";
-  display: block;
-  height: 2px;
-  position: absolute;
-  -webkit-transition: width 1000ms;
-  -moz-transition: width 1000ms;
-  -ms-transition: width 1000ms;
-  -o-transition: width 1000ms;
-  transition: width 1000ms;
-  width: 0%;
-}
-
-.navigation.-menu > ul > li > a:hover::after, .navigation > .-menu > ul > li > a:hover::after, .-menu.registration > ul > li > a:hover::after, .header > .-menu.container > ul > li > a:hover::after, .header > .container > div.-menu > ul > li > a:hover::after {
-  width: 100%;
+  padding-bottom: 5px !important;
 }
 
 .navigation > *, .navigation > * > *, .registration > *, .header > .container > *, .header > .container > div > * {
@@ -2937,31 +3013,6 @@ footer .container {
 
 .sidebar > div > ul > li {
   display: block;
-  position: relative;
-  padding: 0 0 10px;
-}
-
-.sidebar > div > ul > li::after {
-  background-color: #ff9c00;
-  bottom: -2px;
-  content: "";
-  height: 2px;
-  left: 0;
-  position: absolute;
-  -webkit-transition: width 1000ms;
-  -moz-transition: width 1000ms;
-  -ms-transition: width 1000ms;
-  -o-transition: width 1000ms;
-  transition: width 1000ms;
-  width: 0%;
-}
-
-.sidebar > div > ul > li:hover {
-  color: #ff9c00;
-}
-
-.sidebar > div > ul > li:hover::after {
-  width: 100%;
 }
 
 .sidebar > div > ul > li:not(:last-child) {
@@ -3022,6 +3073,123 @@ footer .container {
   .item-list ~ .item-list {
     margin-left: 0;
   }
+}
+
+.tabs.photo-grid .tabs-navigation {
+  text-align: center;
+}
+
+.tabs.photo-grid .tabs-navigation > li {
+  display: inline-block;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  vertical-align: middle;
+}
+
+.tabs.photo-grid .tabs-content {
+  align-items: stretch;
+  flex-flow: row;
+  justify-content: center;
+  margin: 30px auto -15px;
+}
+
+.tabs.photo-grid .tabs-content > * {
+  flex: 0 0 33.3333%;
+  padding: 0 15px 30px;
+}
+
+.tabs.photo-grid .tabs-content > * > *[style*="background-image"] {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  background-position: left center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  padding: 0 0 80%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .tabs.photo-grid .tabs-content {
+    max-width: 830px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .tabs.photo-grid .tabs-content > * {
+    flex: 0 0 50%;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .tabs.photo-grid .tabs-navigation {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+  .tabs.photo-grid .tabs-navigation > li {
+    display: block;
+    width: 100%;
+  }
+  .tabs.photo-grid .tabs-navigation > li::before {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    display: block !important;
+    width: 100% !important;
+  }
+}
+
+.modal {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  flex-flow: column;
+  height: 100%;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  padding: 30px;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+
+.modal .modal-body {
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  background-color: white;
+  display: inherit;
+  height: 100vh;
+  max-height: 600px;
+  max-width: 800px;
+  position: relative;
+  padding: 15px;
+  width: 100%;
+}
+
+.modal .modal-body > a {
+  color: white;
+  display: block;
+  font-size: 2rem;
+  margin: -20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.modal .modal-body .modal-content {
+  display: inherit;
+  height: 100%;
+  width: inherit;
+}
+
+.modal .modal-body .modal-content .responsive-media {
+  display: inherit;
+  height: inherit;
+  width: inherit;
 }
 
 section.contato {

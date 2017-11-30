@@ -13,22 +13,8 @@
             text-transform: uppercase
         >ul  
             >li  
-                &::after    
-                    background-color: $laranja
-                    bottom: -2px
-                    content: ""
-                    height: 2px
-                    left: 0
-                    position: absolute
-                    +width(1000ms)
-                    width: 0%
-                &:hover
-                    color: $laranja
-                    &::after 
-                        width: 100%
-                display: block 
-                position: relative
-                padding: 0 0 10px
+                @extend .underline-item
+                display: block  
                 &:not(:last-child)
                     margin-bottom: 10px
 @media only screen and (max-width: 767px)
