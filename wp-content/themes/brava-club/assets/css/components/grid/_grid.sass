@@ -72,3 +72,15 @@
             p  
                 text-align: justify 
 
+.pg-interna
+    .grid
+        .item
+            &.-horizontal:nth-child(even)
+                >*
+                    &:first-child
+                        order: 2
+                        padding-left: 0
+                    &:last-child
+                        order: 1
+                        padding-right: 30px
+                        padding-left: 0

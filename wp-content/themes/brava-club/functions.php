@@ -20,6 +20,133 @@
     // add_menu_page( 'Customize', 'Customize', 'administrator', 'customize.php', '', 'dashicons-admin-appearance', 1 );
     }
     ////////////////////////////////////////////////////
+
+    register_post_type( 'webdoor',
+    array(
+    'labels' => array(
+        'name' => __( 'Webdoors' ),
+        'singular_name' => __( 'Webdoor' ),
+        'add_new' => __( 'Novo Webdoor' )),
+        'public'             => false,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'webdoor', 'with_front' => false ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => true,
+        'menu_position'      => -1,
+        'menu_icon'      =>  get_template_directory_uri().'/favico.png',
+        'supports'           => array( 'title', 'thumbnail')
+    ));
+
+    register_post_type( 'pacote',
+    array(
+    'labels' => array(
+        'name' => __( 'Pacotes' ),
+        'singular_name' => __( 'Pacote' ),
+        'add_new' => __( 'Novo pacote' )),
+        'public'             => false,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'pacote', 'with_front' => false ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => true,
+        'menu_position'      => -4,
+        'menu_icon'      =>  get_template_directory_uri().'/favico.png',
+        'supports'           => array( 'title', 'thumbnail', 'editor')
+    ));
+
+    register_post_type( 'servico',
+    array(
+    'labels' => array(
+        'name' => __( 'Serviços' ),
+        'singular_name' => __( 'Serviço' ),
+        'add_new' => __( 'Novo Serviço' )),
+        'public'             => false,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'servico', 'with_front' => false ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => true,
+        'menu_position'      => -5,
+        'menu_icon'      =>  get_template_directory_uri().'/favico.png',
+        'supports'           => array( 'title' )
+    ));
+
+
+    register_post_type( 'acomodacoes',
+    array(
+    'labels' => array(
+        'name' => __( 'Acomodações' ),
+        'singular_name' => __( 'Acomodação' ),
+        'add_new' => __( 'Nova Acomodação' )),
+        'public'             => false,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'acomodacoes', 'with_front' => false ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => true,
+        'menu_position'      => -3,
+        'menu_icon'      =>  get_template_directory_uri().'/favico.png',
+        'supports'           => array( 'title', 'editor', 'thumbnail')
+    ));
+
+    register_post_type( 'galeria',
+    array(
+    'labels' => array(
+        'name' => __( 'Fotos' ),
+        'singular_name' => __( 'Foto' ),
+        'add_new' => __( 'Nova Foto' )),
+        'public'             => false,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'galeria', 'with_front' => false ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => true,
+        'menu_position'      => -7,
+        'menu_icon'      =>  get_template_directory_uri().'/favico.png',
+        'supports'           => array( 'title', 'thumbnail')
+    ));
+
+    function galeria_taxonomy() {
+        register_taxonomy( 'galeria_taxonomy', 'galeria',
+            array(
+                'labels' => array(
+                    'name'              => 'Categoria da Foto',
+                    'singular_name'     => 'Categoria da Foto',
+                    'search_items'      => 'Procurar Categoria da Foto',
+                    'all_items'         => 'Todos os Categorias',
+                    'edit_item'         => 'Editar Categoria da Foto',
+                    'update_item'       => 'Atualizar Categoria da Foto',
+                    'add_new_item'      => 'Adicionar Novo Categoria da Foto',
+                    'new_item_name'     => 'Novo Categoria da Foto',
+                    'menu_name'         => 'Categoria da Foto',
+                ),
+                'hierarchical' => true,
+                'sort' => true,
+                'args' => array( 'orderby' => 'term_order' ),
+                'rewrite' => array( 'slug' => 'diretoriacat' ),
+                'show_admin_column' => true
+            )
+        );
+    }
+
+    ////////////////////////////////////////////////////
+
     function getrid() {
     remove_post_type_support( 'page', 'page-attributes' );
     }
@@ -305,10 +432,10 @@
     wp_enqueue_script('transformicons', get_bloginfo('stylesheet_directory')."/assets/css/components/transformicons/transformicons.min.js", '', '', true);
     wp_enqueue_script('owl-carousel', get_bloginfo('stylesheet_directory')."/assets/css/components/owlcarousel/owl.carousel.min.js", '', '', true);
     wp_enqueue_script('latinize', get_bloginfo('stylesheet_directory')."/node_modules/latinize/latinize.js", '', '', true);
-    wp_enqueue_script('maps', "https://maps.googleapis.com/maps/api/js?v=3.exp", '', '', true);
+    // wp_enqueue_script('maps', "https://maps.googleapis.com/maps/api/js?&key=AIzaSyB3QGAwLJ-Uu8Tl1Sy2d_Zr-f4T1n8mgEw&v=3.exp", '', '', true);
     wp_enqueue_script('functions.js', get_bloginfo('stylesheet_directory')."/assets/js/functions.min.js", '', '', true);
-    wp_enqueue_style('style-owl-carousel', get_bloginfo('stylesheet_directory').'/assets/css/components/owlcarousel/owl.carousel.min.css', '', '', '', true);
-    wp_enqueue_style('style-owl-theme', get_bloginfo('stylesheet_directory').'/assets/css/components/owlcarousel/owl.theme.default.min.css', '', '', '', true);
+    // wp_enqueue_style('style-owl-carousel', get_bloginfo('stylesheet_directory').'/assets/css/components/owlcarousel/owl.carousel.min.css', '', '', '', true);
+    // wp_enqueue_style('style-owl-theme', get_bloginfo('stylesheet_directory').'/assets/css/components/owlcarousel/owl.theme.default.min.css', '', '', '', true);
     wp_enqueue_style('google-fonts', 'http://fontawesome.io/assets/font-awesome/css/font-awesome.css', '', '', '', true);
     wp_enqueue_style('font-awesome', 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,700', '', '', '', true);
     wp_enqueue_style('style', get_bloginfo('stylesheet_directory').'/style.min.css', '', '', '', true); 
@@ -390,28 +517,47 @@
     if( function_exists('acf_add_options_page') ) {
     
         acf_add_options_page(array(
-    		'page_title' 	=> 'BravaClub',
-    		'menu_title'	=> 'BravaClub<br>Settings',
-    		'menu_slug' 	=> 'brava-club',
+    		'page_title' 	=> 'A Pousada',
+    		'menu_title'	=> 'A Pousada',
+    		'menu_slug' 	=> 'a-pousada',
     		'capability'	=> 'edit_posts',
             'parent_slug'   => '',
             'icon_url'      =>  get_template_directory_uri().'/favico.png', // Add this line and replace the second inverted commas with class of the icon you like
-            'position' => -1
-    	));
-        
-    	acf_add_options_sub_page(array(
-    		'page_title' 	=> 'Home Settings',
-    		'menu_title'	=> 'Home',
-    		'capability'	=> 'edit_posts',
-            'parent_slug'   => 'brava-club'
+            'position' => -2
         ));
         
-    	acf_add_options_sub_page(array(
-    		'page_title' 	=> 'Footer Settings',
-    		'menu_title'	=> 'Footer',
+        acf_add_options_page(array(
+    		'page_title' 	=> 'Rodapé',
+    		'menu_title'	=> 'Rodapé',
+    		'menu_slug' 	=> 'rodape',
     		'capability'	=> 'edit_posts',
-            'parent_slug'   => 'brava-club'
+            'parent_slug'   => '',
+            'icon_url'      =>  get_template_directory_uri().'/favico.png', // Add this line and replace the second inverted commas with class of the icon you like
+            'position' => -6
     	));
+        
+    	// acf_add_options_sub_page(array(
+    	// 	'page_title' 	=> 'A Pousada',
+    	// 	'menu_title'	=> 'A Pousada',
+    	// 	'capability'	=> 'edit_posts',
+        //     'parent_slug'   => 'brava-club'
+        // ));
+
+    	// acf_add_options_sub_page(array(
+    	// 	'page_title' 	=> 'Tour Settings',
+    	// 	'menu_title'	=> 'Tour',
+    	// 	'capability'	=> 'edit_posts',
+        //     'parent_slug'   => 'brava-club'
+    	// ));
+        
+    	// acf_add_options_sub_page(array(
+    	// 	'page_title' 	=> 'Footer Settings',
+    	// 	'menu_title'	=> 'Footer',
+    	// 	'capability'	=> 'edit_posts',
+        //     'parent_slug'   => 'brava-club'
+        // ));
+        
+
         
     	// acf_add_options_sub_page(array(
     	// 	'page_title' 	=> 'About Settings',
@@ -475,6 +621,7 @@
     // add_action( 'init', 'the_widgets_init' );
     add_action( 'init', 'add_taxonomies_to_pages' );
     add_action( 'admin_init', 'hide_editor' );
+    add_action( 'init', 'galeria_taxonomy' );
     // add_action( 'widgets_init', 'register_widgets' );
     // update_option( 'siteurl', 'http://www.gabrieldegennaro.com.br/projects/brava-club/' );
     // update_option( 'home', 'http://www.gabrieldegennaro.com.br/projects/brava-club/' );

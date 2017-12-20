@@ -1663,7 +1663,6 @@ body .btn {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -ms-border-radius: 6px;
-  cursor: pointer;
   display: block;
   text-align: center;
 }
@@ -1678,8 +1677,8 @@ body .btn.-btn-2 {
   width: 100%;
 }
 
-html .btn.-btn-2:hover,
-body .btn.-btn-2:hover {
+html .btn.-btn-2[href]:hover,
+body .btn.-btn-2[href]:hover {
   background-color: #ffb400;
 }
 
@@ -1690,8 +1689,8 @@ body .btn.-btn-1 {
   text-transform: uppercase;
 }
 
-html .btn.-btn-1:hover,
-body .btn.-btn-1:hover {
+html .btn.-btn-1[href]:hover,
+body .btn.-btn-1[href]:hover {
   background-color: #ffb400;
   border-color: rgba(255, 255, 255, 0);
 }
@@ -1756,6 +1755,11 @@ html section:not(.webdoor) > .container,
 body section:not(.webdoor) > .container {
   padding-top: 85px;
   padding-bottom: 85px;
+}
+
+html.pg-interna section,
+body.pg-interna section {
+  background-color: transparent !important;
 }
 
 html .mais,
@@ -1907,7 +1911,8 @@ main {
   padding-right: 15px;
 }
 
-.flex, .panels > .container, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, .tabs.photo-grid .tabs-content, .modal.open, section.contato > .container > .title + ul {
+.flex, .panels .container, .navigation, .navigation > *, .registration, .header > .container, .header > .container > div, .grid, .grid > *, footer .footer > .container, footer .copyright ul, .tabs.photo-grid .tabs-content, .modal.open, section.contato > .container > .title + ul, section.contato > .container > .title + ul > * > p, html section.contato > .container > .title + ul > * > h2.title + h3,
+body section.contato > .container > .title + ul > * > h2.title + h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -1915,13 +1920,13 @@ main {
   flex-wrap: wrap !important;
 }
 
-.panels > .container {
+.panels .container {
   align-items: stretch;
   flex-flow: row;
   justify-content: space-between;
 }
 
-.panels > .container .feed {
+.panels .container .feed {
   flex: 1;
   overflow: hidden;
   padding-left: 15px;
@@ -1929,7 +1934,11 @@ main {
 }
 
 .pg-interna main {
-  background-color: #fafafa;
+  margin-top: 0;
+}
+
+.pg-single main {
+  padding: 30px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -2656,19 +2665,22 @@ a {
   padding: 0 0 70%;
 }
 
+.acomodacoes .owl-carousel.owl-theme .owl-nav {
+  margin-top: -30px;
+}
+
 .galeria .owl-carousel {
   padding: 0;
 }
 
 .galeria .owl-carousel.owl-theme .owl-dots {
-  bottom: -40px;
+  bottom: -30px;
   left: 0;
   position: absolute;
   width: calc(100% - 110px);
 }
 
 .galeria .owl-carousel.owl-theme .owl-nav {
-  bottom: -50px;
   left: initial;
   right: 0;
   top: initial;
@@ -2691,7 +2703,7 @@ a {
   padding: 180px 15px 150px !important;
 }
 
-.pg-interna .owl-carousel.owl-theme .item::after {
+.pg-interna .owl-carousel.owl-theme .item h2, .pg-interna .owl-carousel.owl-theme .item::after {
   display: none;
 }
 
@@ -2902,6 +2914,17 @@ a {
   }
 }
 
+.pg-interna .grid .item.-horizontal:nth-child(even) > *:first-child {
+  order: 2;
+  padding-left: 0;
+}
+
+.pg-interna .grid .item.-horizontal:nth-child(even) > *:last-child {
+  order: 1;
+  padding-right: 30px;
+  padding-left: 0;
+}
+
 .map {
   display: block;
   height: 500px;
@@ -3000,15 +3023,15 @@ footer .container {
   width: 330px;
 }
 
-.sidebar > div:not(:last-child) {
-  margin-bottom: 25px;
-}
-
-.sidebar > div > .title {
+.sidebar .title {
   font-weight: normal;
   font-size: 3rem;
   margin-bottom: 25px;
   text-transform: uppercase;
+}
+
+.sidebar > div:not(:last-child) {
+  margin-bottom: 25px;
 }
 
 .sidebar > div > ul > li {
@@ -3039,21 +3062,17 @@ footer .container {
   margin-bottom: 15px;
 }
 
-.item-list {
-  display: inline-block;
-  margin-bottom: 30px;
-  vertical-align: top;
+.post-info {
+  color: rgba(0, 0, 0, 0.7);
+  display: block;
+  margin: -25px 0;
 }
 
-.item-list ~ .item-list {
-  margin-left: 30px;
-}
-
-.item-list > * {
+.item-list > li {
   display: block;
 }
 
-.item-list > *::before {
+.item-list > li::before {
   content: "\f105";
   color: #ffb400;
   display: inline-block;
@@ -3062,17 +3081,8 @@ footer .container {
   vertical-align: middle;
 }
 
-.item-list > *:not(:last-child) {
+.item-list > li:not(:last-child) {
   margin-bottom: 15px;
-}
-
-@media only screen and (max-width: 767px) {
-  .item-list {
-    display: block;
-  }
-  .item-list ~ .item-list {
-    margin-left: 0;
-  }
 }
 
 .tabs.photo-grid .tabs-navigation {
@@ -3217,6 +3227,8 @@ section.contato > .container > .title + ul > * {
 
 section.contato > .container > .title + ul > * > p, html section.contato > .container > .title + ul > * > h2.title + h3,
 body section.contato > .container > .title + ul > * > h2.title + h3 {
+  align-items: center;
+  flex-flow: row;
   font-weight: bold;
 }
 
@@ -3224,27 +3236,34 @@ section.contato > .container > .title + ul > * > p > i, html section.contato > .
 body section.contato > .container > .title + ul > * > h2.title + h3 > i {
   color: #ff9c00;
   font-size: 2.7rem;
+  flex: 0 0 auto;
   font-weight: initial;
-  margin-right: 15px;
+  width: 30px;
 }
 
-section.contato > .container > .title + ul > * > p > *, html section.contato > .container > .title + ul > * > h2.title + h3 > *,
-body section.contato > .container > .title + ul > * > h2.title + h3 > * {
-  display: inline-block;
+section.contato > .container > .title + ul > * > p > i + *, html section.contato > .container > .title + ul > * > h2.title + h3 > i + *,
+body section.contato > .container > .title + ul > * > h2.title + h3 > i + * {
+  flex: 1;
   text-align: left;
-  vertical-align: middle;
+  padding-left: 15px;
 }
 
 @media only screen and (max-width: 736px) {
-  section.contato > .container > .title + ul > * > p > *, html section.contato > .container > .title + ul > * > h2.title + h3 > *,
-  body section.contato > .container > .title + ul > * > h2.title + h3 > * {
-    display: block;
-    text-align: inherit;
+  section.contato > .container > .title + ul > * > p, html section.contato > .container > .title + ul > * > h2.title + h3,
+  body section.contato > .container > .title + ul > * > h2.title + h3 {
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
   }
   section.contato > .container > .title + ul > * > p > i, html section.contato > .container > .title + ul > * > h2.title + h3 > i,
   body section.contato > .container > .title + ul > * > h2.title + h3 > i {
-    margin-right: 0;
     margin-bottom: 15px;
+    width: initial;
+  }
+  section.contato > .container > .title + ul > * > p > i + *, html section.contato > .container > .title + ul > * > h2.title + h3 > i + *,
+  body section.contato > .container > .title + ul > * > h2.title + h3 > i + * {
+    padding-left: 0;
+    text-align: inherit;
   }
 }
 
@@ -3264,4 +3283,12 @@ body section.contato > .container > .title + ul > * > h2.title + h3 > * {
 .a-acomodacao h4 {
   color: silver;
   margin: 30px 0;
+}
+
+.page_id_20 .grid {
+  flex-flow: column;
+}
+
+.page_id_20 .grid > .item:not(:last-child) {
+  margin-bottom: 30px;
 }

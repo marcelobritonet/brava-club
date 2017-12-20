@@ -23,7 +23,7 @@ main
     flex-wrap: wrap !important
 
 .panels
-    >.container
+    .container
         align-items: stretch
         @extend .flex
         flex-flow: row
@@ -36,7 +36,10 @@ main
 
 .pg-interna
     main 
-        background-color: #fafafa
+        margin-top: 0
+.pg-single
+    main 
+        padding: 30px
 
 @media only screen and (max-width: 767px)
     .panels

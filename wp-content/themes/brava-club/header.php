@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <title><?php if (is_front_page()) { echo get_bloginfo('title')." - ".get_bloginfo('description'); } else { echo get_bloginfo('title')." - ".get_the_title(); } ?></title>
+    <title><?php if (is_front_page()) { echo get_bloginfo('title'); if(get_bloginfo('description')) : echo get_bloginfo('description'); endif; } else { echo get_bloginfo('title')." - ".get_the_title(); } ?></title>
     <?php wp_meta(); ?>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -13,20 +13,9 @@
     <meta name="DC.creator " content="Wesley Andrade - http://www.github.com/wesandradealves" />
     <meta name="DC.creator.address" content="http://www.github.com/wesandradealves" />
     <meta name="DC.description" content="<?php echo get_bloginfo('description'); ?>" />
-    <meta name="DC.publisher" content="Aluguel de carros online | Reserve aqui o seu veículo na CarRentalz - https://carrentalz.com.br/" />
+    <meta name="DC.publisher" content="<?php echo get_bloginfo('title')." ".get_bloginfo('description'); ?>" />
     <meta name="DC.Identifier" content="<?php echo site_url(); ?>">
-    <?php
-        // header("Cache-Control: private, max-age=10800, store, cache, no-revalidate, pre-check=10800");
-        // header("Pragma: private");
-        // header("Expires: " . date(DATE_RFC822,strtotime("30 day")));    
-    ?>
-    <!--cache-->
-    <!-- <meta http-equiv="cache-Control" content="public, max-age=604800" />
-    <meta name="expires" content="sun, 03 Dec 2017 19:45:00 GMT">
-    <meta name="date" content="2017-11-14T01:48:00EST">
-    <meta name="last-modified" content="2017-11-14T01:48:00EST">
-    <meta http-equiv="last-modified" content="2017-11-14T01:48:00EST"> -->
-    <!---->
+
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="HandheldFriendly" content="true" />
     <meta name="audience" content="all" />
@@ -76,13 +65,11 @@
                     <div>
                         <h1>
                             <!-- Template Part Logo -->
-                            <a href="" class="logo" title="">
-                                <img height="46" src="assets/imgs/logo.png" alt="">
-                            </a>
+                            <?php get_template_part('assets/css/components/logo/logo'); ?>
                             <!--  -->
                         </h1>
                         <!-- Template Part Registration -->
-                        <form action="#" method="#" class="registration">
+                        <!-- <form action="#" method="#" class="registration">
                             <div>
                                 <i class="fa fa-calendar"></i>
                                 <span class="btn -btn-1">
@@ -96,81 +83,17 @@
                                     10 Hóspede(s)
                                 </span>
                             </div>
-                        </form>                        
+                        </form>                         -->
                     </div>
                     <!-- Template Part Navigation -->
                     <nav class="navigation -menu">
-                        <ul>
-                            <li>
-                                <a href="">A Pousada</a>
-                            </li>
-                            <li>
-                                <a href="">Tour e Fotos</a>
-                            </li> 
-                            <li>
-                                <a href="">Acomodações</a>
-                            </li>
-                            <li>
-                                <a href="">Pacotes</a>
-                            </li> 
-                            <li>
-                                <a href="">Notícias</a>
-                            </li>
-                            <li>
-                                <a href="">Serviços</a>
-                            </li> 
-                            <li>
-                                <a href="">Avaliações</a>
-                            </li>
-                            <li>
-                                <a href="">Contato</a>
-                            </li> 
-                            <li>
-                                <button onclick="mobileNavigation()" type="button" class="tcon tcon-menu--xcross" aria-label="toggle menu">
-                                    <span class="tcon-menu__lines" aria-hidden="true">
-                                    </span>
-                                    <span class="tcon-visuallyhidden">toggle menu</span>
-                                </button>
-                            </li>
-                        </ul>
+                        <?php get_template_part('assets/css/components/navigation/navigation'); ?>
                     </nav>
                     <!--  -->
                 </div>
                 <!-- Template Part Navigation -->
                 <nav class="navigation -menu -mobile-navigation">
-                    <ul>
-                        <li>
-                            <a href="">A Pousada</a>
-                        </li>
-                        <li>
-                            <a href="">Tour e Fotos</a>
-                        </li> 
-                        <li>
-                            <a href="">Acomodações</a>
-                        </li>
-                        <li>
-                            <a href="">Pacotes</a>
-                        </li> 
-                        <li>
-                            <a href="">Notícias</a>
-                        </li>
-                        <li>
-                            <a href="">Serviços</a>
-                        </li> 
-                        <li>
-                            <a href="">Avaliações</a>
-                        </li>
-                        <li>
-                            <a href="">Contato</a>
-                        </li> 
-                        <li>
-                            <button onclick="mobileNavigation()" type="button" class="tcon tcon-menu--xcross" aria-label="toggle menu">
-                                <span class="tcon-menu__lines" aria-hidden="true">
-                                </span>
-                                <span class="tcon-visuallyhidden">toggle menu</span>
-                            </button>
-                        </li>
-                    </ul>
+                    <?php get_template_part('assets/css/components/navigation/navigation'); ?>
                 </nav>
             </header>
             <main>

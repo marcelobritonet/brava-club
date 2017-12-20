@@ -78,19 +78,23 @@
                 +border(10px)
                 cursor: pointer
                 padding: 0 0 70%
+.acomodacoes
+    .owl-carousel
+        &.owl-theme
+            .owl-nav
+                margin-top: -30px
 .galeria
     .owl-carousel
         padding: 0
         &.owl-theme
             .owl-dots
-                bottom: -40px
+                bottom: -30px
                 left: 0
                 position: absolute
                 width: calc(100% - 110px)
             .owl-nav 
                 [class*=owl-]
                     color: black
-                bottom: -50px
                 left: initial
                 right: 0
                 top: initial
@@ -103,6 +107,7 @@
             .owl-nav 
                 display: none
             .item 
+                h2,
                 &::after 
                     display: none
                 padding: 180px 15px 150px !important 
