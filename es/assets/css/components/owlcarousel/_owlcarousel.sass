@@ -1,0 +1,191 @@
+.owl-carousel
+    .item
+        background-size: cover 
+        background-position: center center
+        background-repeat: no-repeat
+    &.owl-theme
+        .owl-nav
+            display: block 
+            margin-top: 0
+            left: 0
+            position: absolute
+            top: 50%
+            width: 100%
+            [class*=owl-]
+                +border(0px)
+                background: transparent 
+                font-size: 4rem
+                margin: 0
+                padding: 0 15px
+                &[class*="prev"]
+                    float: left 
+                &[class*="next"]
+                    float: right
+.webdoor
+    .owl-carousel
+        &.owl-theme
+            .owl-dots
+                align-items: stretch 
+                bottom: 0
+                display: flex 
+                justify-content: center 
+                margin: 0
+                position: absolute
+                padding: 15px
+                width: 100%
+                .owl-dot 
+                    >span  
+                        +border(0px)
+                        background: white
+                        height: 5px
+                        margin: 0
+                        width: 100%
+                    &.active>span 
+                        background: $amarelo
+                    flex: 1
+                    margin: 0 7px
+                    max-width: 65px
+        .item
+            max-height: 580px
+            padding: calc(25vw + 79px) 15px 150px
+            h2 
+                font-weight: normal
+            .btn 
+                font-size: 2.4rem
+                max-width: 300px
+                margin: 0 auto
+                padding: 15px
+.galeria,
+.acomodacoes
+    .owl-carousel   
+        padding: 0 60px
+        &.owl-theme
+            .owl-dots
+                margin-top: 30px
+                .owl-dot
+                    &.active span 
+                        background: $amarelo
+                    span 
+                        background: darken(gray,15%)
+                        height: 15px
+                        margin: 0 6px
+                        width: 15px
+            .owl-nav
+                margin-top: -50px
+                [class*=owl-]
+                    color: black
+            .item 
+                +border(10px)
+                cursor: pointer
+                padding: 0 0 70%
+.galeria
+    .owl-carousel
+        padding: 0
+        &.owl-theme
+            .owl-dots
+                bottom: -40px
+                left: 0
+                position: absolute
+                width: calc(100% - 110px)
+            .owl-nav 
+                [class*=owl-]
+                    color: black
+                bottom: -50px
+                left: initial
+                right: 0
+                top: initial
+                width: 110px
+.pg-interna
+    .webdoor 
+        height: initial
+    .owl-carousel
+        &.owl-theme
+            .owl-nav 
+                display: none
+            .item 
+                &::after 
+                    display: none
+                padding: 180px 15px 150px !important 
+@media only screen and (min-width: 1600px)  
+    .webdoor
+        .owl-carousel
+            .item  
+                padding: calc(300px + 79px) 15px 150px
+@media only screen and (min-width: 1140px) and (max-width: 1600px)
+    .webdoor
+        .owl-carousel
+            .item 
+                padding: 25vw 15px 150px
+@media only screen and (min-width: 768px) and (max-width: 1140px)
+    .webdoor
+        .owl-carousel
+            .item 
+                padding: calc(25vw + 125px) 15px 150px
+@media only screen and (max-width: 667px)      
+    .acomodacoes
+        .owl-carousel   
+            &.owl-theme
+                .owl-nav
+                    margin-top: -25px
+@media only screen and (max-width: 767px)
+    .galeria
+        .owl-carousel
+            &.owl-theme
+                .owl-nav
+                    bottom: 0
+    .webdoor
+        max-height: initial 
+        height: 100vh
+        .owl-carousel
+            max-height: inherit
+            height: inherit 
+            [class*="owl-stage"]
+                max-height: inherit
+                height: inherit 
+                .owl-item
+                    max-height: inherit
+                    height: inherit 
+            .item 
+                max-height: inherit
+                padding-top: 0
+                height: inherit
+                &::after 
+                    background-color: red
+                    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, $azul 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,$azul 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,$azul 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='$azul',GradientType=0 ); /* IE6-9 */
+                    content: ""
+                    display: block 
+                    height: 100%
+                    left: 0 
+                    position: absolute
+                    top: 0 
+                    width: 100%
+                    z-index: 1 
+                .container
+                    align-items: center
+                    display: flex 
+                    flex-flow: column
+                    flex-wrap: wrap
+                    height: 100% 
+                    justify-content: flex-end
+                    z-index: 10
+                    .btn 
+                        font-size: 2rem
+@media only screen and (max-height: 480px)
+    .webdoor 
+        .owl-carousel
+            .item 
+                padding-bottom: 75px
+@media only screen and (max-width: 375px)
+    .acomodacoes
+        .owl-carousel   
+            &.owl-theme
+                .owl-nav
+                    [class*=owl-]
+                        &[class*="prev"]
+                            left: -20px
+                        &[class*="next"]
+                            right: -20px
+            padding: 0 30px

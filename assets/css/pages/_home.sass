@@ -1,0 +1,50 @@
+section 
+    &.contato 
+        background-color: transparentize($azul,0.85) !important
+        .map 
+            border-bottom: 20px transparentize($azul,0.85) solid
+        >.container
+            >.title
+                color: lighten(gray,20%)
+                &+ul
+                    @extend .flex
+                    flex-flow: row 
+                    margin: 0 -15px
+                    >* 
+                        text-align: center    
+                        >p  
+                            font-weight: bold 
+                            >i  
+                                color: $laranja
+                                font-size: 2.7rem
+                                font-weight: initial
+                                margin-right: 15px
+                            >* 
+                                display: inline-block
+                                text-align: left
+                                vertical-align: middle 
+                        flex: 1 
+                        padding: 0 15px
+@media only screen and (max-width: 736px) 
+    section 
+        &.contato 
+            >.container
+                >.title
+                    &+ul
+                        >* 
+                            >p  
+                                >* 
+                                    display: block 
+                                    text-align: inherit
+                                >i  
+                                    margin-right: 0
+                                    margin-bottom: 15px
+@media only screen and (max-width: 414px) 
+    section 
+        &.contato 
+            >.container
+                >.title
+                    &+ul
+                        flex-flow: column
+                        >*:not(:last-child)
+                            margin-bottom: 30px
