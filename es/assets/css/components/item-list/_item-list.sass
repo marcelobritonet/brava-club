@@ -1,0 +1,22 @@
+.item-list
+    display: inline-block
+    margin-bottom: 30px
+    vertical-align: top 
+    &~.item-list
+        margin-left: 30px
+    >*
+        display: block
+        &::before 
+            content: "\f105"
+            color: $amarelo
+            display: inline-block
+            font: normal normal normal 20px/.1 FontAwesome
+            margin-right: 5px
+            vertical-align: middle 
+        &:not(:last-child)
+            margin-bottom: 15px
+@media only screen and (max-width: 767px)
+    .item-list
+        display: block  
+        &~.item-list
+            margin-left: 0

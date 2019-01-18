@@ -1,0 +1,46 @@
+.modal
+    align-items: center
+    background-color: rgba(0,0,0,.7) 
+    display: none
+    &.open
+        @extend .flex
+    flex-flow: column
+    height: 100%
+    justify-content: center
+    left: 0
+    position: fixed
+    padding: 30px
+    top: 0
+    width: 100% 
+    z-index: 50
+    .modal-body
+        >a  
+            color: white 
+            display: block
+            font-size: 2rem
+            margin: -20px 
+            position: absolute
+            right: 0
+            top: 0 
+        +border(10px)
+        background-color: white
+        display: inherit
+        height: 100vh
+        max-height: 600px
+        max-width: 800px
+        position: relative
+        padding: 15px
+        width: 100%
+        .modal-content
+            display: inherit 
+            height: 100%
+            width: inherit
+            .responsive-media 
+                display: inherit 
+                height: inherit
+                width: inherit
+
+        .fa-close
+            background: red
+            width: 20px
+            height: 20px

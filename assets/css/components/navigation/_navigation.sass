@@ -1,0 +1,50 @@
+.navigation
+    align-items: center
+    @extend .flex
+    flex-flow: row   
+    &.-mobile-navigation
+        display: block
+        height: 0
+        overflow: hidden
+        &.-active
+            height: auto
+        >ul  
+            display: inherit 
+            >li
+                border-bottom: 1px rgba(0,0,0,.1) solid  
+                display: inherit 
+                margin: 0 0 !important
+                padding: 15px
+                text-align: left
+                >a  
+                    &::after 
+                        display: none !important
+    &.-menu
+        >ul  
+            width: 100%
+            >li  
+                &:nth-last-child(2)
+                    margin-right: 0
+                &:last-child 
+                    display: none 
+                >a  
+                    @extend .underline-item
+                    padding-bottom: 5px!important
+    >* 
+        @extend .navigation
+        &:not(:last-child)
+            margin-right: 20px
+        color: white 
+        text-align: center
+        text-transform: uppercase
+        >*
+            color: inherit
+            font-size: 1.3rem
+            text-align: inherit
+            text-transform: inherit
+@media only screen and (max-width: 767px)
+    .navigation
+        &.-mobile-navigation
+            &.-active
+                height: 100vh
+                overflow: auto

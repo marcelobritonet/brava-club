@@ -1,0 +1,52 @@
+.tabs
+    &.photo-grid
+        .tabs-navigation
+            text-align: center
+            >li
+                @extend .underline-item
+                display: inline-block
+                margin-bottom: 15px
+                padding-left: 15px
+                padding-right: 15px
+                vertical-align: middle 
+        .tabs-content
+            align-items: stretch 
+            @extend .flex
+            flex-flow: row
+            justify-content: center
+            margin: 30px auto -15px
+            >*
+                >*[style*="background-image"]
+                    +border(10px)
+                    background-position: left center
+                    background-size: cover 
+                    background-repeat: no-repeat
+                    display: block 
+                    padding: 0 0 80%
+                    width: 100%
+                flex: 0 0 33.3333%
+                padding: 0 15px 30px
+@media only screen and (min-width: 768px)
+    .tabs 
+        &.photo-grid
+            .tabs-content
+                max-width: 830px
+@media only screen and (max-width: 414px)
+    .tabs 
+        &.photo-grid
+            .tabs-content
+                >*
+                    flex: 0 0 50%
+@media only screen and (max-width: 375px)
+    .tabs 
+        &.photo-grid
+            .tabs-navigation
+                margin-left: -15px 
+                margin-right: -15px
+                >li  
+                    &::before 
+                        background-color: rgba(0,0,0,.1) !important
+                        display: block !important
+                        width: 100%!important
+                    display: block 
+                    width: 100%
